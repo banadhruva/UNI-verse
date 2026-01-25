@@ -178,9 +178,17 @@ const App = () => {
                 <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.9] mb-10 uppercase">
                   Level up<br/><span className="text-indigo-600">Together.</span>
                 </h1>
-                <div className="flex flex-wrap gap-2 p-1.5 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 w-fit">
+                
+                {/* BIGGER DEPT BUTTONS */}
+                <div className="flex flex-wrap gap-3 p-2 bg-white/5 backdrop-blur-md rounded-[24px] border border-white/10 w-fit">
                   {departments.map(dept => (
-                    <button key={dept} onClick={() => setActiveDept(dept)} className={`px-6 py-2.5 rounded-xl text-[10px] font-black uppercase transition-all duration-300 ${activeDept === dept ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}>{dept}</button>
+                    <button 
+                      key={dept} 
+                      onClick={() => setActiveDept(dept)} 
+                      className={`px-8 py-4 rounded-[18px] text-[12px] font-black uppercase tracking-wider transition-all duration-300 ${activeDept === dept ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-600/40 scale-105' : 'text-slate-400 hover:text-white hover:bg-white/10'}`}
+                    >
+                      {dept}
+                    </button>
                   ))}
                 </div>
               </div>
@@ -206,24 +214,26 @@ const App = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-8 rounded-[40px] w-full max-w-lg shadow-2xl animate-in zoom-in-95 duration-500 hover:border-indigo-500/30 transition-all">
-                    <div className="flex items-center gap-6 mb-8 border-b border-white/5 pb-6">
+                  <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-10 rounded-[48px] w-full max-w-xl shadow-2xl animate-in zoom-in-95 duration-500 hover:border-indigo-500/30 transition-all">
+                    {/* BIGGER HOD IMAGE */}
+                    <div className="flex items-center gap-8 mb-10 border-b border-white/5 pb-8">
                       <div className="relative">
-                        <div className="absolute -inset-1 bg-indigo-600 rounded-[34px] blur opacity-20"></div>
-                        <img src={coordinatorData[activeDept].hod.img} className="relative w-28 h-28 rounded-[32px] object-cover border-2 border-indigo-600 shadow-2xl" alt="HOD"/>
+                        <div className="absolute -inset-1.5 bg-indigo-600 rounded-[42px] blur opacity-30 animate-pulse"></div>
+                        <img src={coordinatorData[activeDept].hod.img} className="relative w-36 h-36 rounded-[40px] object-cover border-2 border-indigo-600 shadow-2xl" alt="HOD"/>
                       </div>
                       <div>
-                        <p className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-1">Head of Department</p>
-                        <h3 className="text-2xl font-black text-white italic leading-tight uppercase tracking-tighter">{coordinatorData[activeDept].hod.name}</h3>
-                        <p className="text-xs font-bold text-slate-400 mt-1 uppercase tracking-wider">{coordinatorData[activeDept].hod.role}</p>
+                        <p className="text-[11px] font-black text-indigo-400 uppercase tracking-[0.2em] mb-2">Head of Department</p>
+                        <h3 className="text-3xl font-black text-white italic leading-tight uppercase tracking-tighter">{coordinatorData[activeDept].hod.name}</h3>
+                        <p className="text-sm font-bold text-slate-400 mt-1 uppercase tracking-widest">{coordinatorData[activeDept].hod.role}</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    {/* BIGGER STAFF IMAGES */}
+                    <div className="grid grid-cols-2 gap-6">
                       {coordinatorData[activeDept].staff.map((s, idx) => (
-                        <div key={idx} className="bg-white/5 p-4 rounded-3xl border border-white/5 flex flex-col items-center text-center group hover:bg-indigo-600 transition-all duration-300">
-                          <img src={s.img} className="w-16 h-16 rounded-2xl object-cover mb-3 group-hover:scale-110 transition-transform" alt="Staff"/>
-                          <p className="text-[10px] font-black text-white uppercase truncate w-full">{s.name}</p>
-                          <p className="text-[8px] font-bold text-indigo-400 group-hover:text-white/70 uppercase tracking-widest">{s.role}</p>
+                        <div key={idx} className="bg-white/5 p-6 rounded-[32px] border border-white/5 flex flex-col items-center text-center group hover:bg-indigo-600 transition-all duration-300">
+                          <img src={s.img} className="w-24 h-24 rounded-[24px] object-cover mb-4 group-hover:scale-110 transition-transform shadow-lg" alt="Staff"/>
+                          <p className="text-[12px] font-black text-white uppercase truncate w-full tracking-tight">{s.name}</p>
+                          <p className="text-[9px] font-bold text-indigo-400 group-hover:text-white/70 uppercase tracking-widest mt-1">{s.role}</p>
                         </div>
                       ))}
                     </div>
