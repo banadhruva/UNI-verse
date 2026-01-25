@@ -26,7 +26,7 @@ const AdminDashboard = () => {
     gallery: []
   });
 
-  const departments = ["CSE", "ECE", "ME", "EE", "CIVIL", "MBA", "PHARMACY", "OTHERS"];
+  const departments = ["CSE", "ECE", "NCC", "MBA", "NSS"];
 
   // --- LIFECYCLE ---
   useEffect(() => {
