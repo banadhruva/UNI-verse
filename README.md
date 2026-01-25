@@ -71,3 +71,16 @@ To ensure 100% uptime and bypass IPv6 networking constraints, the system utilize
 1. **Clone the repository**
    ```bash
    git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/ikgptu-connect.git
+2. **Setup Environment Variables : Create a .env file in the backend root:**
+   ```DATABASE_URL=your_supabase_pooler_connection_string
+PORT=5000
+3. **Install & Launch**
+   ```npm install && npm run dev
+```
+## 🤝 Connect
+**
+Developer: Dhruv Bana
+
+Frontend: uni-verse-99.vercel.app
+
+Backend: Render**
