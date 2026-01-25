@@ -6,6 +6,20 @@ A high-performance, full-stack event management and student engagement platform 
 
 ---
 
+## 📸 App Preview
+
+<p align="center">
+  <img src="YOUR_DESKTOP_SCREENSHOT_URL" width="800" alt="Student Portal Desktop View">
+</p>
+
+<p align="center">
+  <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture.PNG" width="250" alt="Landing Page View">
+  <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture3.PNG" width="250" alt="AI Chatbot Interface">
+  <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture4.PNG" width="250" alt="Admin Dashboard">
+</p>
+
+---
+
 ## ⚡ Key Features
 
 - **Dynamic Event Universe**: Real-time event fetching from Supabase PostgreSQL.
@@ -16,34 +30,39 @@ A high-performance, full-stack event management and student engagement platform 
 
 ---
 
+## ⚙️ System Architecture & Flow
+
+
+
+To ensure 100% uptime and bypass IPv6 networking constraints, the system utilizes a **Transaction Pooler (PGBouncer)**. This acts as a high-speed gateway between our Render-hosted backend and the Supabase database.
+
+---
+
 ## 🛠️ The Tech Stack
 
-### Frontend (The Visuals)
+### Frontend
 * **React.js & Vite**: Optimized for speed and modern developer experience.
 * **Tailwind CSS**: A custom "Ultra-Dark" glassmorphism theme with tactile UI elements.
 * **Framer Motion**: Smooth entry animations and staggered list transitions.
 
-### Backend (The Brains)
+### Backend
 * **Node.js & Express**: Scalable API architecture.
 * **PostgreSQL**: Relational database for structured event and registration data.
-* **PGBouncer (Session Pooling)**: Crucial IPv4-to-IPv6 bridge for cloud database connectivity.
+* **PGBouncer**: Crucial IPv4-to-IPv6 bridge for cloud database connectivity.
 
-### Infrastructure & DevOps
+### Infrastructure
 * **Vercel**: Frontend hosting on the edge network.
 * **Render**: Automated CI/CD for the backend API.
 * **Supabase**: Managed database with custom Row Level Security (RLS) policies.
-* **Cloudinary**: High-speed CDN for optimized student/event imagery.
+* **Cloudinary**: High-speed CDN for optimized image delivery.
 
 ---
 
 ## 🧩 Architectural Challenges Solved
 
-This project successfully tackled several industry-standard deployment hurdles:
-
-1.  **IPv4/IPv6 Networking**: Built a reliable bridge between IPv4-only hosting (Render) and IPv6-only database infrastructure (Supabase) using **Session Pooling**.
-2.  **Encrypted Handshakes**: Configured strict SSL handshakes (`rejectUnauthorized: false`) for secure cross-platform data flow.
-3.  **Authentication Sync**: Solved complex "Tenant not found" and URI-encoding issues related to PostgreSQL connection strings.
-4.  **Security Policies**: Implemented RLS (Row Level Security) to allow public interactions while protecting sensitive coordinator data.
+- **IPv4/IPv6 Networking**: Built a reliable bridge between IPv4-only hosting (Render) and IPv6-only database infrastructure (Supabase).
+- **Encrypted Handshakes**: Configured SSL handshakes (`rejectUnauthorized: false`) for secure cross-platform data flow.
+- **Security Policies**: Implemented RLS (Row Level Security) to allow public interactions while protecting sensitive coordinator data.
 
 ---
 
