@@ -11,7 +11,19 @@ require('dotenv').config();
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 
-app.use(cors());
+// --- UPDATED CORS CONFIGURATION ---
+// Replace the .vercel.app link with your actual URL after deployment
+const corsOptions = {
+  origin: [
+    'http://localhost:5173', 
+    'http://localhost:3000', 
+    'https://uni-verse-frontend.vercel.app' 
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Initialize AI and Supabase
@@ -147,9 +159,7 @@ app.get('/api/admin/applications/:eventId', async (req, res) => {
 app.delete('/api/admin/events/:eventId', async (req, res) => {
   const { eventId } = req.params;
   try {
-    // Optional: Delete embeddings first if not using CASCADE in DB
     await pool.query('DELETE FROM event_knowledge WHERE event_id = $1', [eventId]);
-    
     const result = await pool.query('DELETE FROM events WHERE id = $1 RETURNING *', [eventId]);
     if (result.rowCount === 0) {
       return res.status(404).json({ error: "Event ID not found." });
@@ -161,12 +171,11 @@ app.delete('/api/admin/events/:eventId', async (req, res) => {
   }
 });
 
-// --- UPDATED RAG CHATBOT ROUTE ---
+// --- RAG CHATBOT ROUTE ---
 
 app.post('/api/chat', async (req, res) => {
   const { question } = req.body;
   try {
-    // 1. Vectorize the student's question
     let queryEmbedding = await hf.featureExtraction({
       model: "BAAI/bge-small-en-v1.5",
       inputs: question,
@@ -176,7 +185,6 @@ app.post('/api/chat', async (req, res) => {
       queryEmbedding = queryEmbedding[0];
     }
 
-    // 2. Query Postgres pgvector using the match_documents function
     const result = await pool.query(
       'SELECT content FROM match_documents($1::vector, $2, $3)',
       [JSON.stringify(queryEmbedding), 0.4, 3]
@@ -186,7 +194,6 @@ app.post('/api/chat', async (req, res) => {
       ? result.rows.map(doc => doc.content).join("\n---\n")
       : "No specific event matches found in the database.";
 
-    // 3. Generate final answer
     const chatResponse = await hf.chatCompletion({
       model: "Qwen/Qwen2.5-72B-Instruct",
       messages: [
@@ -206,7 +213,14 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
+// --- SERVER START / EXPORT ---
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 IKGPTU Portal Server running on port ${PORT}`);
-});
+
+// Only listen if not running in a serverless environment (like Vercel functions)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 IKGPTU Portal Server running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
