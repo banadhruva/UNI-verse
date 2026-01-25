@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ai-sdk/openai": "^3.0.18",
+    "@google/generative-ai": "^0.24.1",
+    "@huggingface/inference": "^4.13.10",
+    "@supabase/supabase-js": "^2.91.1",
+    "aws-sdk": "^2.1693.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.6.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "langchain": "^1.2.12",
+    "multer": "^2.0.2",
+    "openai": "^6.16.0",
+    "pg": "^8.17.2",
+    "uuid": "^13.0.0"
+  }
+}
