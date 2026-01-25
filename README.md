@@ -75,6 +75,7 @@ To ensure 100% uptime and bypass IPv6 networking constraints, the system utilize
  ```bash
 DATABASE_URL=your_supabase_pooler_connection_string
 PORT=5000
+```
 3. **Install & Launch**
  ```bash
 npm install && npm run dev
