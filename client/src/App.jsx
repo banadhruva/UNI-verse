@@ -159,7 +159,7 @@ const App = () => {
         <nav className="w-full bg-[#020617]/40 backdrop-blur-2xl sticky top-0 z-[100] p-4 border-b border-white/5 flex justify-between px-6 md:px-12 items-center">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
              <div className="w-8 h-8 bg-indigo-600 rounded-lg rotate-12 flex items-center justify-center font-black">I</div>
-             <h1 className="text-xl font-black italic tracking-tighter">IKGPTU<span className="text-indigo-500 font-bold">CONNECT</span></h1>
+             <h1 className="text-xl font-black italic tracking-tighter">UNI-<span className="text-indigo-500 font-bold">verse</span></h1>
           </div>
           <button onClick={toggleView} className="text-[10px] font-black uppercase tracking-widest bg-indigo-600/10 text-indigo-400 px-6 py-2.5 rounded-xl border border-indigo-500/20 hover:bg-indigo-600 hover:text-white transition-all duration-300">
             {view === 'student' ? 'Coordinator Access' : 'Exit Admin View'}
