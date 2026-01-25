@@ -17,7 +17,7 @@ const AdminDashboard = () => {
     desc: '',
     venue: '',
     date: '',
-    dept: 'CSE',
+    dept: 'CSE', // Default department
     competitionInput: "",
     competitionList: [],
     fieldInput: "",
@@ -25,6 +25,8 @@ const AdminDashboard = () => {
     banner: null,
     gallery: []
   });
+
+  const departments = ["CSE", "ECE", "ME", "EE", "CIVIL", "MBA", "PHARMACY", "OTHERS"];
 
   // --- LIFECYCLE ---
   useEffect(() => {
@@ -34,6 +36,7 @@ const AdminDashboard = () => {
   // --- API ACTIONS ---
   const fetchAdminEvents = async () => {
     try {
+      // Changed to match standard API route for events
       const res = await API.get('/events');
       setAdminEvents(res.data);
     } catch (err) {
@@ -55,7 +58,7 @@ const AdminDashboard = () => {
   };
 
   const handleDeleteEvent = async (id, e) => {
-    e.stopPropagation(); // Prevent selecting the event while trying to delete it
+    e.stopPropagation();
     if (window.confirm("Are you sure? This will delete the event, all registrations, and AI knowledge.")) {
       try {
         await API.delete(`/admin/events/${id}`);
@@ -112,6 +115,7 @@ const AdminDashboard = () => {
     try {
       await API.post('/admin/events', data);
       setShowCreateModal(false);
+      // Reset form
       setFormData({ title: '', desc: '', venue: '', date: '', dept: 'CSE', competitionInput: "", competitionList: [], fieldInput: "", requiredFields: [], banner: null, gallery: [] });
       fetchAdminEvents();
       alert("Event Published & AI Knowledge base updated!");
@@ -253,6 +257,20 @@ const AdminDashboard = () => {
               <div className="col-span-2 space-y-1">
                 <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Event Title</label>
                 <input required className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-white outline-none focus:border-indigo-500" value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} />
+              </div>
+
+              {/* NEW DEPARTMENT SELECTOR */}
+              <div className="col-span-2 space-y-1">
+                <label className="text-[10px] font-black text-slate-500 uppercase ml-2">Hosting Department</label>
+                <select 
+                  className="w-full bg-slate-900 border border-slate-800 rounded-2xl p-4 text-white outline-none focus:border-indigo-500 appearance-none"
+                  value={formData.dept}
+                  onChange={e => setFormData({...formData, dept: e.target.value})}
+                >
+                  {departments.map(d => (
+                    <option key={d} value={d}>{d} Department</option>
+                  ))}
+                </select>
               </div>
 
               <div className="space-y-1">
