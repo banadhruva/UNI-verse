@@ -52,4 +52,4 @@ This project was a masterclass in modern deployment hurdles. We successfully nav
 
 1. **Clone the Repo**
    ```bash
-   git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/ikgptu-connect.git
+   git clone [https://github.com/](https://github.com/)banadhruva/UNI-verse.git
