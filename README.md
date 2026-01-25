@@ -1,55 +1,54 @@
 # 🚀 IKGPTU-CONNECT: The "Uni-Verse" Event Portal
 
-A high-performance, full-stack event management and student engagement platform built for **IKG Punjab Technical University**. Designed with a "Glassmorphism" UI aesthetic and a robust server-side architecture.
+**Live Demo:** [uni-verse-99.vercel.app](https://uni-verse-99.vercel.app/)
 
-
+A high-performance, full-stack event management and student engagement platform built for **IKG Punjab Technical University**. This portal bridges the gap between students and department coordinators with a "Glassmorphism" UI and a robust PostgreSQL backbone.
 
 ---
 
-## ⚡ Features
+## ⚡ Key Features
 
 - **Dynamic Event Universe**: Real-time event fetching from Supabase PostgreSQL.
-- **AI-Powered Support**: Integrated Chatbot for instant query resolution.
-- **The "Legacy Vault"**: A high-performance masonry gallery for past event memories.
-- **Admin Command Center**: Role-based access to manage events, images, and applications.
-- **Departmental Logic**: Filtered views for CSE, NCC, NSS, MBA, and ECE.
+- **AI-Powered Support**: Native AI Chatbot to handle student queries about event rules and dates.
+- **The "Legacy Vault"**: A high-performance masonry gallery showcasing the university's rich event history.
+- **Admin Command Center**: Role-based access for coordinators to manage events, image uploads, and participant lists.
+- **Departmental Ecosystem**: Specialized views for **CSE, NCC, NSS, MBA, and ECE**.
 
 ---
 
 ## 🛠️ The Tech Stack
 
 ### Frontend (The Visuals)
-* **React.js & Vite**: For lightning-fast development and optimized builds.
-* **Tailwind CSS**: Custom "Ultra-Dark" theme with glassmorphism effects.
-* **Framer Motion**: Smooth animations and staggered list transitions.
-* **Lucide React**: For clean, minimalist iconography.
+* **React.js & Vite**: Optimized for speed and modern developer experience.
+* **Tailwind CSS**: A custom "Ultra-Dark" glassmorphism theme with tactile UI elements.
+* **Framer Motion**: Smooth entry animations and staggered list transitions.
 
 ### Backend (The Brains)
-* **Node.js & Express**: Handling complex routing and middleware.
-* **PostgreSQL**: Relational data management for events and student registrations.
-* **PGBouncer (Session Pooling)**: Optimized IPv4-to-IPv6 bridge for high-concurrency database connections.
+* **Node.js & Express**: Scalable API architecture.
+* **PostgreSQL**: Relational database for structured event and registration data.
+* **PGBouncer (Session Pooling)**: Crucial IPv4-to-IPv6 bridge for cloud database connectivity.
 
 ### Infrastructure & DevOps
-* **Supabase**: Managed Database & Storage buckets with custom RLS (Row Level Security) policies.
-* **Render**: Automated CI/CD for the backend server.
-* **Vercel**: Edge-network hosting for the frontend.
-* **Cloudinary**: Image optimization and CDN delivery.
+* **Vercel**: Frontend hosting on the edge network.
+* **Render**: Automated CI/CD for the backend API.
+* **Supabase**: Managed database with custom Row Level Security (RLS) policies.
+* **Cloudinary**: High-speed CDN for optimized student/event imagery.
 
 ---
 
 ## 🧩 Architectural Challenges Solved
 
-This project was a masterclass in modern deployment hurdles. We successfully navigated:
+This project successfully tackled several industry-standard deployment hurdles:
 
-1.  **The IPv6 Barrier**: Bridging the gap between IPv4-only hosting (Render) and IPv6-only databases (Supabase) using specialized **Session Poolers**.
-2.  **CORS & SSL Encryption**: Implementing `rejectUnauthorized: false` for secure, encrypted database handshakes across different cloud providers.
-3.  **URL Encoding**: Managing complex connection strings with special characters via URI encoding.
-4.  **RLS Policies**: Crafting custom SQL policies to allow public uploads while maintaining database integrity.
+1.  **IPv4/IPv6 Networking**: Built a reliable bridge between IPv4-only hosting (Render) and IPv6-only database infrastructure (Supabase) using **Session Pooling**.
+2.  **Encrypted Handshakes**: Configured strict SSL handshakes (`rejectUnauthorized: false`) for secure cross-platform data flow.
+3.  **Authentication Sync**: Solved complex "Tenant not found" and URI-encoding issues related to PostgreSQL connection strings.
+4.  **Security Policies**: Implemented RLS (Row Level Security) to allow public interactions while protecting sensitive coordinator data.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation & Local Development
 
-1. **Clone the Repo**
+1. **Clone the repository**
    ```bash
-   git clone [https://github.com/](https://github.com/)banadhruva/UNI-verse.git
+   git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/ikgptu-connect.git
