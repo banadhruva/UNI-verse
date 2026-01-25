@@ -9,11 +9,11 @@ A high-performance, full-stack event management and student engagement platform 
 ## 📸 App Preview
 
 <p align="center">
-  <img src="YOUR_DESKTOP_SCREENSHOT_URL" width="800" alt="Student Portal Desktop View">
+  <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture.PNG" width="800" alt="Student Portal Desktop View">
 </p>
 
 <p align="center">
-  <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture.PNG" width="250" alt="Landing Page View">
+  <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture2.PNG" width="250" alt="Landing Page View">
   <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture3.PNG" width="250" alt="AI Chatbot Interface">
   <img src="https://github.com/banadhruva/UNI-verse/blob/main/client/src/assets/Capture4.PNG" width="250" alt="Admin Dashboard">
 </p>
