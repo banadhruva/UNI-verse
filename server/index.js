@@ -216,11 +216,8 @@ app.post('/api/chat', async (req, res) => {
 // --- SERVER START / EXPORT ---
 const PORT = process.env.PORT || 5000;
 
-// Only listen if not running in a serverless environment (like Vercel functions)
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`🚀 IKGPTU Portal Server running on port ${PORT}`);
-  });
-}
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 IKGPTU Portal Server running on port ${PORT}`);
+});
 
 module.exports = app;
