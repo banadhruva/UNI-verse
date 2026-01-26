@@ -20,7 +20,7 @@ const App = () => {
     { name: "Aditya Azad", event: "Advance Mountaineering Camp", dept: "ECE", year: "2025", rank: "Pro", img: "https://res.cloudinary.com/daookjsaa/image/upload/v1769339134/WhatsApp_Image_2023-08-18_at_13.01.34_gkeprd.jpg" },
     { name: "Aanvi Tyagi", event: "Inter-College Debate", dept: "MBA", year: "2025", rank: "Gold", img: "https://res.cloudinary.com/daookjsaa/image/upload/v1769451011/IMG_20251031_085348_q2zbkb.jpg" },
     { name: "Anni Singh", event: "Robo-Wars", dept: "ECE", year: "2024", rank: "Winner", img: "https://res.cloudinary.com/daookjsaa/image/upload/v1769451047/IMG_20251030_130005_okkv7u.jpg" },
-    { name: "Dev D", event: "MUN", dept: "ECE", year: "2024", rank: "Winner", img: "https://res.cloudinary.com/daookjsaa/image/upload/v1769269907/samples/smile.jpg" },
+    { name: "Dev D", event: "MUN", dept: "ECE", year: "2024", rank: "Winner", img: "https://res.cloudinary.com/daookjsaa/image/upload/v1769451277/images_8_vvr6xm.jpg" },
   ];
 
   const departments = ['All', 'CSE', 'NCC', 'NSS', 'MBA', 'ECE'];
