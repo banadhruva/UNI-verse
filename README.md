@@ -1,4 +1,4 @@
-# 🚀 IKGPTU-CONNECT: The "Uni-Verse" Event Portal
+# 🚀 IKGPTU-CONNECT: The "UNI-verse" Event Portal
 
 **Live Demo:** [uni-verse-99.vercel.app](https://uni-verse-99.vercel.app/)
 
