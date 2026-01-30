@@ -72,4 +72,4 @@ The system architecture is designed for scalability and intelligence:
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/banadhruva/UNI-verse.git](https://github.com/banadhruva/UNI-verse.git)
+   git clone https://github.com/banadhruva/UNI-verse.git
